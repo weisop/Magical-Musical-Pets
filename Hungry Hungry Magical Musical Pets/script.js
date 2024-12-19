@@ -76,14 +76,12 @@ const sidebar = document.getElementById("sidebar");
 
 // Toggle the sidebar (active state) and its expanded size
 menuToggle.addEventListener("click", () => {
-    // Toggle active state to show/hide the sidebar
-    sidebar.classList.toggle("active");
-    
-    // Toggle expanded state to resize the sidebar
     if (sidebar.classList.contains("active")) {
-        sidebar.classList.add("expanded"); // Add expanded size when active
+        sidebar.classList.remove("active");
+        sidebar.classList.add("hidden"); // Fully hide the sidebar
     } else {
-        sidebar.classList.remove("expanded"); // Remove expanded size when inactive
+        sidebar.classList.add("active");
+        sidebar.classList.remove("hidden"); // Show the sidebar
     }
 });
 

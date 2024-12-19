@@ -65,77 +65,6 @@ nav a:hover {
     border: none;
     padding: 10px 15px;
     /* General Reset */
-body, h1, p, nav, a, button {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Body Styling */
-body {
-    background-color: #f9f6f7;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Navigation Styling */
-nav {
-    background-color: #e3dcdc;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #d6c6c6;
-}
-
-/* Calendar Styling */
-#calendar {
-    margin: 0 auto;
-    width: 75%;
-    height: auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-/* Month Navigation */
-#month-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#month-navigation button {
-    background-color: #e3dcdc;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0 10px;
-    transition: background-color 0.3s ease;
 }
 
 #month-navigation button:hover {
@@ -237,7 +166,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
     transition: right 0.3s ease;
     z-index: 999; /* Ensure it appears above the main content */
@@ -248,7 +177,7 @@ nav a:hover {
     padding: 0;
     margin: 0;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 #sidebar ul li {
@@ -269,20 +198,19 @@ nav a:hover {
 
 /* Sidebar Active */
 #sidebar.active {
-    right: 0;
+    right: 0%;
 }
 
 /* Sidebar Expanded */
 #sidebar.expanded {
-    width: 1050px; 
+    width: 40%; 
     transition: all 0.3s ease;
 }
 
 /* Hidden Sidebar */
 #sidebar.hidden {
-    right: -300px;
+    right: -100%;
     transition: all 0.3s ease;
-}
     cursor: pointer;
     font-weight: bold;
     font-size: 1.2rem;
@@ -290,151 +218,37 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 
-#month-navigation button:hover {
-    background-color: #d6c6c6;
+
+/* Style for homepage */
+
+#homepage {
+    background-image: url('./Images/HomepageBg.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh;
 }
 
-#month-year {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
+#homepage-nav {
+    background-color: #F7E9de;
 }
 
-/* Day Names */
-#day-names {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: bold;
-    padding: 10px 0;
-    border-bottom: 2px solid #eee;
+div1 {
+    background-color: #F7E9de ;
+    position: absolute; /* Keeps the block in place even when scrolling */
+    top: 50%; /* Positions the block in the middle vertically */
+    right: 10%; /* Positions the block 20px from the right */
+    transform: translateY(-50%); /* Centers the block vertically */
+    width: 500px; /* Adjust width as needed */
+    height: 300px;
+    padding: 20px; /* Add some padding inside the block */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for a floating effect */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
-#day-names div {
-    text-align: center;
-    font-size: 1rem;
-}
-
-/* Days Grid */
-#days {
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: minmax(80px, 1fr); /* Adjust day box size */
-    gap: 5px;
-    margin-top: 10px;
-}
-
-/* Individual Day Styling */
-#days div {
-    border: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 5px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    font-size: 1rem;
-    position: relative;
-}
-
-/* Highlight the Current Day Number */
-.current-day {
-    background-color: #a4c2f4;
-    color: white;
-    border-radius: 50%; /* Circle */
-    padding: 5px;
-    margin: auto;
-    text-align: center;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-}
-
-/* Day Number Alignment */
-#days div span {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
-
-/* Hamburger Button */
-#menu-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #444;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it stays above other elements */
-    transition: color 0.3s ease;
-}
-
-#menu-toggle:hover {
-    color: #888;
-}
-
-/* Sidebar */
-#sidebar {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Hidden by default */
-    width: 300px;
-    height: 100%;
-    background: #f5f5f5;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    transition: right 0.3s ease;
-    z-index: 999; /* Ensure it appears above the main content */
-}
-
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+#float-txt {
+    padding-top: 20%;
     text-align: center;
 }
-
-#sidebar ul li {
-    margin: 20px 0;
-}
-
-#sidebar ul li a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #444;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-#sidebar ul li a:hover {
-    color: #888;
-}
-
-/* Sidebar Active */
-#sidebar.active {
-    right: 0;
-}
-
-/* Sidebar Expanded */
-#sidebar.expanded {
-    width: 450px; 
-    transition: all 0.3s ease;
-}
-
-/* Hidden Sidebar */
-#sidebar.hidden {
-    right: -300px;
-    transition: all 0.3s ease;
-}
-
-
 

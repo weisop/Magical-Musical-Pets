@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="hamburger" aria-label="Open menu">
+        ☰
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="hidden" aria-label="Sidebar menu">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="calendar.html" id="calendar-link">Calendar</a></li>
+            <li><a href="pet-customization.html" id="pet-customization-link">Pet Customization</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Monthly Calendar</h1>
+        <div id="calendar">
+            <div id="month-navigation">
+                <button id="prev-month" aria-label="Previous month">←</button>
+                <div id="month-year"></div>
+                <button id="next-month" aria-label="Next month">→</button>
+            </div>
+            <div id="day-names">
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+                <div>Sun</div>
+            </div>
+            <div id="days"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
