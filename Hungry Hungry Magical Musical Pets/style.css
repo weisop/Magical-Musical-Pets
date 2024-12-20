@@ -231,24 +231,105 @@ nav a:hover {
 
 #homepage-nav {
     background-color: #F7E9de;
+    width: 50%; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center; 
+    
 }
 
-div1 {
-    background-color: #F7E9de ;
-    position: absolute; /* Keeps the block in place even when scrolling */
-    top: 50%; /* Positions the block in the middle vertically */
-    right: 10%; /* Positions the block 20px from the right */
-    transform: translateY(-50%); /* Centers the block vertically */
-    width: 500px; /* Adjust width as needed */
-    height: 300px;
-    padding: 20px; /* Add some padding inside the block */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for a floating effect */
-    border-radius: 10px; /* Rounded corners */
-    z-index: 1000; /* Ensures it stays above other elements */
+#homepage-nav a {
+    color: #92ada4;
 }
 
-#float-txt {
-    padding-top: 20%;
-    text-align: center;
+#floating-container {
+    position: absolute;
+    top: 50%; 
+    right: 10%; 
+    transform: translateY(-50%); 
+    width: 400px; 
+    padding: 20px; 
+    background-color: #F7E9de; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+    z-index: 1000; 
 }
 
+/* Image inside the container */
+#container-image {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+
+/* Button inside the container */
+#container-button {
+    position: absolute;
+    top: 80%; 
+    width: 50%; 
+    padding: 20px; 
+    background-color: #fcca89; 
+    color: #92ada4; 
+    font-weight: bold;
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    font-family: 'Arial', sans-serif; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+#container-button:hover {
+    transform: translate(0%, -80%) scale(1.05); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#container-button:active {
+    transform:  translate(0%, -80%) scale(0.95); 
+}
+
+#gif-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    width: 500px;  /* Match GIF width */
+    height: auto;
+}
+
+/* Background Block Behind GIF */
+#floating-container-left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;  
+    height: 100%;  
+    background-color: #F7E9de;  
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;  
+}
+
+/* GIF Positioned on Top */
+#title {
+    left: 50%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;  
+    border-radius: 8px;
+}
+
+#floating-container-left {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
