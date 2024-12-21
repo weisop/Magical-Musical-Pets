@@ -146,7 +146,7 @@ nav a:hover {
     font-size: 2rem;
     color: #444;
     cursor: pointer;
-    z-index: 1000; /* Ensure it stays above other elements */
+    z-index: 1000; 
     transition: color 0.3s ease;
 }
 
@@ -158,7 +158,7 @@ nav a:hover {
 #sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Hidden by default */
+    right: -300px;
     width: 300px;
     height: 100%;
     background: #f5f5f5;
@@ -169,7 +169,7 @@ nav a:hover {
     justify-content: flex-start;
     padding: 20px;
     transition: right 0.3s ease;
-    z-index: 999; /* Ensure it appears above the main content */
+    z-index: 999; 
 }
 
 #sidebar ul {
@@ -222,7 +222,8 @@ nav a:hover {
 /* Style for homepage */
 
 #homepage {
-    background-image: url('./Images/HomepageBg.jpg'); 
+    /* background-image: url('./Images/HomepageBg.jpg');  */
+    background-color:#f0c5b5;
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -293,11 +294,63 @@ nav a:hover {
     transform:  translate(0%, -80%) scale(0.95); 
 }
 
+.modal {
+    display: none;  /* Hidden initially */
+    position: fixed;
+    z-index: 1001;  /* Ensure it appears on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #F7E9de;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Modal Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #gif-wrapper {
     position: absolute;
     left: 0;
-    bottom: 20%;
-    width: 500px;  /* Match GIF width */
+    bottom: 10%;
+    width: 700px;
     height: auto;
 }
 
@@ -332,4 +385,18 @@ nav a:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+#logo {
+    height: 200px; 
+    width: auto;
+    position: absolute; 
+    top: 10px;
+    left: 10px;
+    cursor: pointer;  
+}
+
+
+#homepage-nav {
+    padding-left: 80px;  
 }
