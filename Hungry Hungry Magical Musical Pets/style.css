@@ -246,7 +246,7 @@ nav a:hover {
 #floating-container {
     position: absolute;
     top: 50%; 
-    right: 10%; 
+    right: 5%; 
     transform: translateY(-50%); 
     width: 400px; 
     padding: 20px; 
@@ -369,7 +369,7 @@ nav a:hover {
 
 /* GIF Positioned on Top */
 #title {
-    left: 50%;
+    left: 25%;
     position: relative;
     width: 100%;
     height: auto;
