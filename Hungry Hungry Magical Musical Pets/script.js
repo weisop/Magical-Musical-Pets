@@ -98,6 +98,9 @@ document.getElementById("pet-customization-link").addEventListener("click", () =
     sidebar.classList.add("hidden");
 });
 
+document.getElementById("days").addEventListener("click", function() {
+    alert("div clicked");
+});
 
 
 
