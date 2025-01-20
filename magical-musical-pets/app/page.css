@@ -1,0 +1,179 @@
+/* Style for homepage */
+
+body {
+  /* background-image: url('./Images/HomepageBg.jpg');  */
+  background-color:#f0c5b5;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 100vh;
+}
+
+#homepage-nav {
+  background-color: #F7E9de;
+  width: 50%; 
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center; 
+  
+}
+
+#homepage-nav a {
+  color: #92ada4;
+}
+
+#floating-container {
+  position: absolute;
+  top: 50%; 
+  right: 10%; 
+  transform: translateY(-50%); 
+  width: 400px; 
+  padding: 20px; 
+  background-color: #F7E9de; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+  z-index: 1000; 
+}
+
+/* Image inside the container */
+#container-image {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+}
+
+/* Button inside the container */
+#container-button {
+  position: absolute;
+  top: 80%; 
+  width: 50%; 
+  padding: 20px; 
+  background-color: #fcca89; 
+  color: #92ada4; 
+  font-weight: bold;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 1rem; 
+  font-family: 'Arial', sans-serif; 
+  cursor: pointer; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+#container-button:hover {
+  transform: translate(0%, -80%) scale(1.05); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#container-button:active {
+  transform:  translate(0%, -80%) scale(0.95); 
+}
+
+.modal {
+  position: fixed;
+  z-index: 1001;  /* Ensure it appears on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #F7E9de;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s;
+}
+
+/* Close Button (X) */
+.close-btn {
+  position: relative;
+  /* right: -px; */
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Modal Fade In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#gif-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: 700px;
+  height: auto;
+}
+
+/* Background Block Behind GIF */
+/* #floating-container-left {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 100%;  
+  height: 100%;  
+  background-color: #F7E9de;  
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;  
+} */
+
+/* GIF Positioned on Top */
+#title {
+  left: 0%;
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 2;  
+  border-radius: 8px;
+}
+
+#floating-container-left {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#logo {
+  height: 200px; 
+  width: auto;
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+  cursor: pointer;  
+}
+
+
+#homepage-nav {
+  padding-left: 80px;  
+}
