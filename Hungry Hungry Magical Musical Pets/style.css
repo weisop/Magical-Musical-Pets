@@ -35,7 +35,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #d6c6c6;
+    background-color: #e1cebd;
 }
 
 /* Calendar Styling */
@@ -253,7 +253,7 @@ nav a:hover {
 #floating-container {
     position: absolute;
     top: 50%; 
-    right: 8%; 
+    right: 12%; 
     transform: translateY(-50%); 
     width: 450px; 
     padding: 20px; 
@@ -293,12 +293,12 @@ nav a:hover {
 }
 
 #container-button:hover {
-    transform: translate(0%, -10%) scale(1.05); 
+    transform: translate(0%, -3%) scale(1.05); 
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
 }
 
 #container-button:active {
-    transform:  translate(0%, -10%) scale(0.95); 
+    transform:  translate(0%, -3%) scale(0.95); 
 }
 
 .modal {
@@ -377,7 +377,7 @@ nav a:hover {
 
 /* GIF Positioned on Top */
 #title {
-    left: 25%;
+    left: 17%;
     position: relative;
     width: 100%;
     height: auto;
@@ -411,10 +411,10 @@ nav a:hover {
 
 #pet-image {
     position: fixed;
-    top: 50%; 
-    left: 323px; 
+    top: 48%; 
+    left: 200px; 
     transform: translateY(-50%); 
-    max-width: 510px;
+    max-width: 660px;
     height: auto;
     z-index: 10; 
 }
