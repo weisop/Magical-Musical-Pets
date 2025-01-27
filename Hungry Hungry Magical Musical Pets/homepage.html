@@ -25,34 +25,18 @@
             </div>
         </div>
         <div id="floating-container">
-            <img src="./Images/RightFloatBg.png" alt="" id="container-image">
+            <div id="img-task-container">
+                <img src="./Images/RightFloatBg.png" alt="" id="container-image">
+                <div id="events-container"></div>
+            </div>
             <button id="container-button">Get Started!</button>
         </div>
         <div id="gif-wrapper">
             <!-- <div id="floating-container-left"></div> -->
             <img src="./Images/Magical Musical pets.gif" id="title" alt="Magical Musical Pets GIF">
         </div>
-
-        <script>
-            document.getElementById('container-button').onclick = function() {
-            document.getElementById('popup-modal').style.display = 'block';
-            console.log("button is clciked");
-            }
-
-
-            function closePopup() {
-                document.getElementById('popup-modal').style.display = 'none';
-            }
-
-
-            window.onclick = function(event) {
-                var modal = document.getElementById('popup-modal');
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            }
-
-        </script>
     </main>
+
+    <script src="homepage-script"></script>
 </body>
 </html>
