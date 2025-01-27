@@ -899,3 +899,19 @@ nav a:hover {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+#musicnotes-container {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  background-color: #bb8563;
+  right: 30%;
+  bottom: 1%;
+  border-radius: 5%;
+}
+
+.note {
+  width: 100px;
+  height: 100px;
+ 
+}

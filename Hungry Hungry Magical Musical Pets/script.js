@@ -418,6 +418,29 @@ addEventSubmit.addEventListener("click", () => {
   }
 });
 
+let noteCount;
+
+// Initialize noteCount from localStorage or set to 0
+if (localStorage.getItem("noteCount") !== null) {
+    // Parse the value safely
+    noteCount = parseInt(localStorage.getItem("noteCount"), 10);
+    // If parsing fails, reset to 0
+    if (isNaN(noteCount)) {
+        noteCount = 0;
+        localStorage.setItem("noteCount", noteCount); // Update localStorage with the correct value
+    }
+} else {
+    noteCount = 0; // Default value if not found
+    localStorage.setItem("noteCount", noteCount); // Save it to localStorage
+}
+
+// Function to update noteCount and save it to localStorage
+function updateNoteCount(change) {
+    noteCount += change; // Adjust noteCount (e.g., +1 or -1)
+    localStorage.setItem("noteCount", noteCount); // Save the updated value
+    console.log(`Current note count: ${noteCount}`);
+}
+
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
@@ -432,6 +455,9 @@ eventsContainer.addEventListener("click", (e) => {
           event.events.forEach((item, index) => {
             if (item.title === eventTitle) {
               event.events.splice(index, 1);
+              updateNoteCount(1);
+              console.log(noteCount + "noteadded");
+             
             }
           });
           //if no events left in a day then remove that day from eventsArr
@@ -491,6 +517,8 @@ document.getElementById("pet-customization-link").addEventListener("click", () =
 document.getElementById("days").addEventListener("click", function() {
     alert("div clicked");
 });
+
+
 
 
 
