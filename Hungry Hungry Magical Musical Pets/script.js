@@ -335,7 +335,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Please fill out all the fields");
     return;
   }
 
@@ -444,7 +444,7 @@ function updateNoteCount(change) {
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
-    if (confirm("Are you sure you want to delete this event?")) {
+    if (confirm("Would you like to mark this as complete?")) {
       const eventTitle = e.target.children[0].children[1].innerHTML;
       eventsArr.forEach((event) => {
         if (

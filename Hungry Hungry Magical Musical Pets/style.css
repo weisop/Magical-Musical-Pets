@@ -111,7 +111,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 30px;
     font-size: 1.7rem;
     font-weight: 550;
     text-transform: capitalize;
@@ -119,6 +119,7 @@ nav a:hover {
   .calendar .month .prev,
   .calendar .month .next {
     cursor: pointer;
+    top: 14%;
   }
   .calendar .month .prev:hover,
   .calendar .month .next:hover {
@@ -759,7 +760,7 @@ nav a:hover {
 #events-container {
   display: none;
   position: absolute;
-  top: 30%;
+  top: 24%;
   left: 20%; 
   background-color: #F7E9de; 
   border-radius: 8px;
@@ -829,7 +830,7 @@ nav a:hover {
 
 /* Slideshow container */
 .image-container {
-  max-width: 800px;
+  max-width: 650px;
   position: relative;
   margin: auto;
 }
@@ -903,9 +904,9 @@ nav a:hover {
 #musicnotes-container {
   display: none;
   position: absolute;
-  padding: 10px;
+  padding: 5px;
   background-color: #bb8563;
-  right: 30%;
+  right: 14%;
   bottom: 1%;
   border-radius: 5%;
 }
