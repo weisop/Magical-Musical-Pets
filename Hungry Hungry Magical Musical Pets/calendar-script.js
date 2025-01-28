@@ -37,23 +37,6 @@ const months = [
   "December",
 ];
 
-// const eventsArr = [
-//   {
-//     day: 13,
-//     month: 11,
-//     year: 2022,
-//     events: [
-//       {
-//         title: "Event 1 lorem ipsun dolar sit genfa tersd dsad ",
-//         time: "10:00 AM",
-//       },
-//       {
-//         title: "Event 2",
-//         time: "11:00 AM",
-//       },
-//     ],
-//   },
-// ];
 
 const eventsArr = [];
 getEvents();
@@ -191,6 +174,7 @@ function addListner() {
   });
 }
 
+// creates button that takes user to current day
 todayBtn.addEventListener("click", () => {
   today = new Date();
   month = today.getMonth();
@@ -198,6 +182,7 @@ todayBtn.addEventListener("click", () => {
   initCalendar();
 });
 
+// allows user to input a date and month in mm/yyyy form
 dateInput.addEventListener("input", (e) => {
   dateInput.value = dateInput.value.replace(/[^0-9/]/g, "");
   if (dateInput.value.length === 2) {
@@ -215,6 +200,7 @@ dateInput.addEventListener("input", (e) => {
 
 gotoBtn.addEventListener("click", gotoDate);
 
+// function that brings user to previously specified month and year
 function gotoDate() {
   console.log("here");
   const dateArr = dateInput.value.split("/");
@@ -226,6 +212,7 @@ function gotoDate() {
       return;
     }
   }
+  // alerts if the month/year is nonexistent
   alert("Invalid Date");
 }
 
@@ -273,6 +260,7 @@ addEventBtn.addEventListener("click", () => {
   addEventWrapper.classList.toggle("active");
 });
 
+// creates close button for add event popup
 addEventCloseBtn.addEventListener("click", () => {
   addEventWrapper.classList.remove("active");
 });
@@ -283,15 +271,13 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//allow 50 chars in eventtitle
+//allow 50 chars in event title
 addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
 function defineProperty() {
   var osccred = document.createElement("div");
-//   osccred.innerHTML =
-//     "A Project By <a href='https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ' target=_blank>Open Source Coding</a>";
   osccred.style.position = "absolute";
   osccred.style.bottom = "0";
   osccred.style.right = "0";
@@ -490,8 +476,8 @@ function getEvents() {
   eventsArr.push(...JSON.parse(localStorage.getItem("events")));
 }
 
+// converts time from 24 hour to 12 hour AM/PM format
 function convertTime(time) {
-  //convert time to 24 hour format
   let timeArr = time.split(":");
   let timeHour = timeArr[0];
   let timeMin = timeArr[1];
