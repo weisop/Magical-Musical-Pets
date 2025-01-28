@@ -39,14 +39,14 @@ const todayYear = today.getFullYear();
 if (eventsArr.length === 0) {
     eventsContainer.style.display = "none";
 } else {
-    eventsContainer.style.display = "block";
-    // Looping through eventsArr
+      // Looping through eventsArr
     eventsArr.forEach((eventObj) => {
         if (
             eventObj.day === todayDay &&
             eventObj.month === todayMonth &&
             eventObj.year === todayYear
         ) {
+            eventsContainer.style.display = "block";
             eventObj.events.forEach((event) => {
                 // Create a new div for each event of the day
                 const eventDiv = document.createElement("div");
