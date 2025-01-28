@@ -48,23 +48,53 @@ else {
     });
 }
 
+
+
+// Get the current note count from localStorage
 const noteCount = parseInt(localStorage.getItem('noteCount'), 10) || 0;
 const notesContainer = document.getElementById("musicnotes-container");
 const noteMax = 5;
 
+// Reference to the audio element
+const audio = new Audio('./Images/music.mp3'); // Path to your 15-second audio file
+
+// Function to handle audio playback
+function playMusic() {
+    if (audio.paused) {
+        audio.play();
+    }
+}
+
+// Function to show the congratulations popup
+function showCongratsPopup() {
+  document.getElementById('congrats-popup').style.display = 'flex';
+}
+
+// Function to close the congratulations popup
+function closeCongratsPopup() {
+  document.getElementById('congrats-popup').style.display = 'none';
+}
+
+// Check if the noteCount has reached 5 and play the music
+if (noteCount === 5) {
+  playMusic(); // Play the music as soon as noteCount is 5
+  showCongratsPopup(); // Show the congratulations popup
+}
+
 if (noteCount == 0 || noteCount == 5) {
     notesContainer.style.display = "none";
     localStorage.setItem('noteCount', 0);
-    
-}
-else {
+} else {
     notesContainer.style.display = "block";
     for (let i = 0; i < noteCount; i++) {
         console.log("a");
-        const noteImg= document.createElement("img");
+        const noteImg = document.createElement("img");
         noteImg.src = "./Images/MusicNote.png";
         noteImg.className = "note";
         notesContainer.appendChild(noteImg);
     }
 }
+
+
+
 
