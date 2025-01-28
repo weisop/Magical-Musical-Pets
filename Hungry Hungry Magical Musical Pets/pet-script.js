@@ -31,20 +31,30 @@ const eventsArr = JSON.parse(localStorage.getItem("events")) || [];
 console.log(eventsArr);
 const eventsContainer = document.getElementById("events-container");
 
+const today = new Date();
+const todayDay = today.getDate();
+const todayMonth = today.getMonth() + 1;
+const todayYear = today.getFullYear();
+
 if (eventsArr.length === 0) {
     eventsContainer.style.display = "none";
-}
-else {
+} else {
     eventsContainer.style.display = "block";
     // Looping through eventsArr
     eventsArr.forEach((eventObj) => {
-        eventObj.events.forEach((event) => {
-            // Creating new div for e.a event 
-            const eventDiv = document.createElement("div");
-            eventDiv.className = "event";
-            eventDiv.innerHTML = `<strong>Task:</strong> ${event.title} <br> <strong>Time:</strong> ${event.time}`;
-            eventsContainer.appendChild(eventDiv);
-        });
+        if (
+            eventObj.day === todayDay &&
+            eventObj.month === todayMonth &&
+            eventObj.year === todayYear
+        ) {
+            eventObj.events.forEach((event) => {
+                // Create a new div for each event of the day
+                const eventDiv = document.createElement("div");
+                eventDiv.className = "event";
+                eventDiv.innerHTML = `<strong>Task:</strong> ${event.title} <br> <strong>Time:</strong> ${event.time}`;
+                eventsContainer.appendChild(eventDiv);
+            });
+        }
     });
 }
 
