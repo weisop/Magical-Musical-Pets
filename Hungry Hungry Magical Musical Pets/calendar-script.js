@@ -1,3 +1,9 @@
+/*
+  calendar-script.js creates the functions for the calendar, including initializing calendars for various months,
+  creating events for each day, displaying events on different days, and navigating to different parts of the calendar
+*/
+
+
 // creates various buttons and display fields for the calendar
 const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),

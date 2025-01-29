@@ -1,3 +1,8 @@
+/*
+    pet-script.js creates functions for the pet customization page, including a slideshow between different pets, a task list 
+    that displays events for the current day, music notes for each completed task, and audio output for completing 5 tasks
+*/
+
 // shows the first slide when loaded
 let slideIndex = 1;
 showSlides(slideIndex);

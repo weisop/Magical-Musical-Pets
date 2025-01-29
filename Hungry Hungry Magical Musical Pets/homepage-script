@@ -1,3 +1,8 @@
+/*
+    homepage-script creates functions for the home page, including a button to create a popup welcome message,
+    and a task list that displays events for the current day
+*/
+
 // retrieves stored events from localstorage or initalizes empty array
 const eventsArr = JSON.parse(localStorage.getItem("events")) || [];
 console.log(eventsArr);
