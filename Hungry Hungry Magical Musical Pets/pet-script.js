@@ -1,57 +1,72 @@
+// shows the first slide when loaded
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// navigates to next/previous slides
 function plusSlides(n) {
+  // updates slides
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// function to jump to specific slide
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+// function to display slides
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
+  
+  // loops through slides, restarts loop if at the end of slides
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
+
+  // hides all slides
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
+
+  // displays current slide and highlights corresponding dot
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
 
+// retrieves stored events from localstorage or initalizes empty array
 const eventsArr = JSON.parse(localStorage.getItem("events")) || [];
 console.log(eventsArr);
+// get container that displays events
 const eventsContainer = document.getElementById("events-container");
 
+// get today's date details
 const today = new Date();
 const todayDay = today.getDate();
 const todayMonth = today.getMonth() + 1;
 const todayYear = today.getFullYear();
 
+// if there are no events, hide event container
 if (eventsArr.length === 0) {
     eventsContainer.style.display = "none";
 } else {
-      // Looping through eventsArr
+    // loop through events array to find events scheduled for today
     eventsArr.forEach((eventObj) => {
         if (
             eventObj.day === todayDay &&
             eventObj.month === todayMonth &&
             eventObj.year === todayYear
         ) {
+            // if there are events for the day, display event container
             eventsContainer.style.display = "block";
             eventObj.events.forEach((event) => {
                 // Create a new div for each event of the day
                 const eventDiv = document.createElement("div");
                 eventDiv.className = "event";
                 eventDiv.innerHTML = `<strong>Task:</strong> ${event.title} <br> <strong>Time:</strong> ${event.time}`;
+                // appends the event div to container
                 eventsContainer.appendChild(eventDiv);
             });
         }
@@ -60,15 +75,16 @@ if (eventsArr.length === 0) {
 
 
 
-// Get the current note count from localStorage
+// Get the current note count from localStorage, default to 0
 const noteCount = parseInt(localStorage.getItem('noteCount'), 10) || 0;
 const notesContainer = document.getElementById("musicnotes-container");
-const noteMax = 5;
+// sets max note count
+const noteMax = 5; 
 
-// Reference to the audio element
-const audio = new Audio('./Images/music.mp3'); // Path to your 15-second audio file
+// reference to the audio element
+const audio = new Audio('./Images/music.mp3'); 
 
-// Function to handle audio playback
+// handles audio playback
 function playMusic() {
     if (audio.paused) {
         audio.play();
@@ -87,13 +103,15 @@ function closeCongratsPopup() {
 
 // Check if the noteCount has reached 5 and play the music
 if (noteCount === 5) {
-  playMusic(); // Play the music as soon as noteCount is 5
-  showCongratsPopup(); // Show the congratulations popup
+  playMusic(); 
+  showCongratsPopup(); 
 }
 
+// hides note container if total notes is 0 or 5, resets notecount
 if (noteCount == 0 || noteCount == 5) {
     notesContainer.style.display = "none";
     localStorage.setItem('noteCount', 0);
+// shows notes otherwise
 } else {
     notesContainer.style.display = "block";
     for (let i = 0; i < noteCount; i++) {

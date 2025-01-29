@@ -1,20 +1,7 @@
-/* General Reset */
-/* body, h1, p, nav, a, button {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-} */
-
-/* Body Styling */
-/* body {
-    background-color: #f9f6f7;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-} */
 
 /* Navigation Styling */
+
+/* styling for nav bar */
 nav {
     background-color: #e3dcdc;
     padding: 10px;
@@ -26,6 +13,7 @@ nav {
     z-index: 1000;
 }
 
+/* styling for individual buttons on nav bar */
 nav a {
     text-decoration: none;
     color: #333;
@@ -34,12 +22,14 @@ nav a {
     border-radius: 5px;
 }
 
+/* changes color when hovering over nav button */
 nav a:hover {
     background-color: #e1cebd;
 }
 
 /* Calendar Styling */
 :root {
+    /* establish primary color for convenience */
     --primary-clr: #f0c5b5;
   }
   * {
@@ -49,7 +39,7 @@ nav a:hover {
     font-family: "Poppins", sans-serif;
   }
   
-  
+  /* styling for body of calendar page */
   body {
     position: relative;
     min-height: 100vh;
@@ -59,6 +49,8 @@ nav a:hover {
     padding-bottom: 30px;
     background-color: #f0c5b5;
   }
+
+  /* styling for container of both left and right parts */
   .container {
     position: relative;
     width: 1200px;
@@ -71,10 +63,14 @@ nav a:hover {
     border-radius: 10px;
     background-color: #F7E9de;
   }
+
+  /* styling for left part */
   .left {
     width: 60%;
     padding: 20px;
   }
+
+  /* styling for general calendar background */
   .calendar {
     position: relative;
     width: 100%;
@@ -105,6 +101,8 @@ nav a:hover {
     left: calc(100% + 12px);
     background-color: #dbb897;
   }
+
+  /* styling for month display at the top */
   .calendar .month {
     width: 100%;
     height: 130px;
@@ -116,15 +114,21 @@ nav a:hover {
     font-weight: 550;
     text-transform: capitalize;
   }
+
+  /* styling for buttons that move between months */
   .calendar .month .prev,
   .calendar .month .next {
     cursor: pointer;
     top: 14%;
   }
+
+  /* styling for when hovering over buttons */
   .calendar .month .prev:hover,
   .calendar .month .next:hover {
     color: var(--primary-clr);
   }
+
+  /* styling for weekdays on top of calendar */
   .calendar .weekdays {
     width: 100%;
     height: 0px;
@@ -136,6 +140,8 @@ nav a:hover {
     font-weight: 500;
     text-transform: capitalize;
   }
+
+  /* styling for individual weekdays */
   .weekdays div {
     width: 14.28%;
     height: 100%;
@@ -143,6 +149,8 @@ nav a:hover {
     align-items: center;
     justify-content: center;
   }
+
+  /* styling for individual days */
   .calendar .days {
     width: 100%;
     display: flex;
@@ -153,6 +161,8 @@ nav a:hover {
     font-weight: 500;
     margin-bottom: 20px;
   }
+
+  /* styling for current day */
   .calendar .days .day {
     width: 14.28%;
     height: 90px;
@@ -163,6 +173,8 @@ nav a:hover {
     color: var(--primary-clr);
     border: 1px solid #f5f5f5;
   }
+
+  /* border lines between days */
   .calendar .days .day:nth-child(7n + 1) {
     border-left: 2px solid #f5f5f5;
   }
@@ -176,6 +188,7 @@ nav a:hover {
     border-bottom: 2px solid #f5f5f5;
   }
   
+  /* styling for hovering other days */
   .calendar .days .day:not(.prev-date, .next-date):hover {
     color: #fff;
     background-color: var(--primary-clr);
@@ -184,12 +197,16 @@ nav a:hover {
   .calendar .days .next-date {
     color: #b3b3b3;
   }
+
+  /* styling for color of current day */
   .calendar .days .active {
     position: relative;
     font-size: 2rem;
-    color: #fff;
+    color: #ffffff;
     background-color: var(--primary-clr);
   }
+
+  /* highlights box of current */
   .calendar .days .active::before {
     content: "";
     position: absolute;
@@ -205,6 +222,8 @@ nav a:hover {
   .calendar .days .event {
     position: relative;
   }
+
+  /* coloring for other days with events */
   .calendar .days .event::after {
     content: "";
     position: absolute;
@@ -216,6 +235,8 @@ nav a:hover {
     transform: translateX(-50%);
     background-color: var(--primary-clr);
   }
+
+  /* styling for other days with events */
   .calendar .days .day:hover.event::after {
     background-color: #fff;
   }
@@ -226,6 +247,8 @@ nav a:hover {
   .calendar .days .active.event {
     padding-bottom: 10px;
   }
+
+  /* styling for today button */
   .calendar .goto-today {
     width: 100%;
     height: 50px;
@@ -244,6 +267,8 @@ nav a:hover {
     overflow: hidden;
     border: 1px solid var(--primary-clr);
   }
+
+  /* styling for input box for going to specifc day */
   .calendar .goto-today .goto input {
     width: 100%;
     height: 30px;
@@ -254,6 +279,8 @@ nav a:hover {
     color: var(--primary-clr);
     border-radius: 5px;
   }
+
+  /* styling for button for going to specifc day */
   .calendar .goto-today button {
     padding: 5px 10px;
     border: 1px solid var(--primary-clr);
@@ -271,6 +298,8 @@ nav a:hover {
     border-left: 1px solid var(--primary-clr);
     border-radius: 0;
   }
+
+  /* styling for right side container */
   .container .right {
     position: relative;
     width: 40%;
@@ -278,6 +307,7 @@ nav a:hover {
     padding: 20px 0;
   }
   
+  /* styling for current days date */
   .right .today-date {
     width: 100%;
     height: 50px;
@@ -302,6 +332,8 @@ nav a:hover {
     font-weight: 400;
     color: #c4a28d;
   }
+
+  /* styling for displaying events on the right */
   .events {
     width: 100%;
     height: 100%;
@@ -312,6 +344,8 @@ nav a:hover {
     flex-direction: column;
     padding-left: 4px;
   }
+
+  /* styling for individual events */
   .events .event {
     position: relative;
     width: 95%;
@@ -326,10 +360,11 @@ nav a:hover {
     background: linear-gradient(90deg, #efcfb7, transparent);
     cursor: pointer;
   }
-  /* even event */
+  /* changes background for even event */
   .events .event:nth-child(even) {
     background: transparent;
   }
+  /* changes background when you hover */
   .events .event:hover {
     background: linear-gradient(90deg, var(--primary-clr), transparent);
   }
@@ -340,6 +375,7 @@ nav a:hover {
 
     
   }
+  /* styling for event titles */
   .events .event .title .event-title {
     font-size: 1rem;
     font-weight: 400;
@@ -353,6 +389,8 @@ nav a:hover {
   .events .event:hover i {
     color: #fff;
   }
+
+  /* styling for event time */
   .events .event .event-time {
     font-size: 0.8rem;
     font-weight: 400;
@@ -363,7 +401,7 @@ nav a:hover {
   .events .event:hover .event-time {
     color: #fff;
   }
-  /* add tick in event after */
+  /* adds tick in after hovering on event */
   .events .event::after {
     content: "✓";
     position: absolute;
@@ -383,6 +421,8 @@ nav a:hover {
     display: flex;
 
   }
+
+  /* styling for add event button */
   .add-event {
     position: absolute;
     bottom: 30px;
@@ -406,6 +446,8 @@ nav a:hover {
   .add-event i {
     pointer-events: none;
   }
+
+  /* text for when there's no event */
   .events .no-event {
     width: 100%;
     height: 100%;
@@ -416,6 +458,8 @@ nav a:hover {
     font-weight: 500;
     color: #a5704f;
   }
+
+  /* styling for adding an event */
   .add-event-wrapper {
     position: absolute;
     bottom: 100px;
@@ -431,6 +475,8 @@ nav a:hover {
   .add-event-wrapper.active {
     max-height: 300px;
   }
+
+  /* styling for add event popup */
   .add-event-header {
     width: 100%;
     height: 50px;
@@ -452,6 +498,8 @@ nav a:hover {
     font-size: 1.2rem;
     font-weight: 500;
   }
+
+  /* styling for add event body */
   .add-event-body {
     width: 100%;
     height: 100%;
@@ -488,12 +536,16 @@ nav a:hover {
   .add-event-body .add-event-input input:focus::placeholder {
     color: var(--primary-clr);
   }
+
+  /* styling for add event popup footer */
   .add-event-footer {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
   }
+
+  /* styling for add event button */
   .add-event-footer .add-event-btn {
     height: 40px;
     font-size: 1rem;
@@ -578,6 +630,7 @@ nav a:hover {
 
 /* Style for homepage */
 
+/* styling for background of homepage */
 #homepage {
     /* background-image: url('./Images/HomepageBg.jpg');  */
     background-color:#f0c5b5;
@@ -587,6 +640,7 @@ nav a:hover {
     height: 100vh;
 }
 
+/* styling for nav bar */
 #homepage-nav {
     background-color: #F7E9de;
     width: 50%; 
@@ -596,11 +650,11 @@ nav a:hover {
     justify-content: center; 
     
 }
-
 #homepage-nav a {
     color: #a5704f;
 }
 
+/* styling for task list container */
 #floating-container {
     position: absolute;
     top: 50%; 
@@ -643,6 +697,7 @@ nav a:hover {
     transition: transform 0.2s, box-shadow 0.2s; 
 }
 
+/* container button actions */
 #container-button:hover {
     transform: translate(0%, -3%) scale(1.05); 
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
@@ -652,6 +707,7 @@ nav a:hover {
     transform:  translate(0%, -3%) scale(0.95); 
 }
 
+/* styling for popup modal */
 .modal {
     display: none;  /* Hidden initially */
     position: fixed;
@@ -664,7 +720,7 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
-/* Modal Content Box */
+/* modal Content Box */
 .modal-content {
     background-color: #F7E9de;
     margin: 15% auto;
@@ -677,7 +733,7 @@ nav a:hover {
     animation: fadeIn 0.3s;
 }
 
-  /* Style for the Pop-up Button */
+  /* style for the Pop-up Button */
   #popup-button {
       font-size: 18px; 
       font-weight: bold;
@@ -718,7 +774,7 @@ nav a:hover {
   }
 
 
-  /* Close Button (X) */
+  /* Close Button styling */
   .close-btn {
       position: absolute;
       top: 233px;
@@ -728,7 +784,6 @@ nav a:hover {
       color: #666666;
       cursor: pointer;
   }
-
   .close-btn:hover {
       color: #000;
   }
@@ -745,6 +800,7 @@ nav a:hover {
       }
   }
 
+  /* positions gif wrapper */
 #gif-wrapper {
     position: absolute;
     left: 0;
@@ -753,13 +809,14 @@ nav a:hover {
     height: auto;
 }
 
-
+/* container image */
 #container-image {
   display: block;
   width: 100%; 
   height: auto;
 }
 
+/* container for current day events */
 #events-container {
   display: none;
   position: absolute;
@@ -774,6 +831,7 @@ nav a:hover {
   z-index: 10; 
 }
 
+/* display for each event */
 .event {
   margin-bottom: 10px;
   font-size: 16px;
@@ -793,6 +851,7 @@ nav a:hover {
     border-radius: 8px;
 }
 
+/* positioning for floating container */
 #floating-container-left {
     opacity: 0;
     animation: fadeIn 0.8s forwards;
@@ -816,6 +875,7 @@ nav a:hover {
     padding-left: 80px;  
 }
 
+/* positioning and animation for credits */
 #credits {
   
   height: auto;
@@ -829,12 +889,10 @@ nav a:hover {
 
 
 
-
-
-/* Pet Cuztomization pag styling */
+/* Pet Cuztomization page styling */
 * {box-sizing:border-box}
 
-/* Slideshow container */
+/* image and slideshow container spacing */
 .image-container {
   max-width: 650px;
   position: relative;
@@ -897,17 +955,17 @@ nav a:hover {
   background-color: #c4a28d;
 }
 
-/* Fading animation */
+/* Fading animation for images */
 .fade {
   animation-name: fade;
   animation-duration: 1s;
 }
-
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
 
+/* positioning for music note container */
 #musicnotes-container {
   display: none;
   position: absolute;
@@ -918,22 +976,23 @@ nav a:hover {
   border-radius: 5%;
 }
 
+/* music notes sizing */
 .note {
   width: 100px;
   height: 100px;
  
 }
 
-/* Popup background */
+/* Popup styling and background */
 .popup {
-  display: none;  /* Hidden by default */
+  display: none;  
   position: fixed;
-  z-index: 1001;  /* On top of other content */
+  z-index: 1001; 
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.5); 
   justify-content: center;
   align-items: center;
   color: #000000;
@@ -968,6 +1027,7 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* styling and spacing for close popup button */
 #close-popup-btn {
   font-size: 18px;
   font-weight: bold;
@@ -980,7 +1040,7 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, background-color 0.3s; 
 }
-
+/* close popup hover background change */
 #close-popup-btn:hover {
   background-color: #9a7962;
   transform: scale(1.03);

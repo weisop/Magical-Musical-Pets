@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- font for icons -->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -13,25 +14,35 @@
     referrerpolicy="no-referrer"
   />
 
+    <!-- links to external css file -->
     <link rel="stylesheet" href="style.css" />
     <title>Calendar</title>
   </head>
   <body>
+    <!-- logo image -->
     <img src="./Images/MMP.png" alt="Logo" id="logo">
+    <!-- nav bar -->
     <nav id = "homepage-nav">
         <a href="homepage.html">Home</a>
         <a href="calendar.html">Calendar</a>
         <a href="pet-customization.html">Pet Customization</a>
     </nav>
 
+    <!-- creates main container holding calendar and events -->
     <div class="container">
+
+      <!-- left section: calendar -->
       <div class="left">
         <div class="calendar">
+          <!-- month navigation -->
           <div class="month">
-            <i class="fas fa-angle-left prev"></i>
+            <!-- button to previous month, display current month, and button to next month -->
+            <i class="fas fa-angle-left prev"></i> 
             <div class="date"></div>
-            <i class="fas fa-angle-right next"></i>
+            <i class="fas fa-angle-right next"></i> 
           </div>
+
+          <!-- labels for each day of the week -->
           <div class="weekdays">
             <div>Sun</div>
             <div>Mon</div>
@@ -42,6 +53,8 @@
             <div>Sat</div>
           </div>
           <div class="days"></div>
+
+          <!-- navigation for going to specific month/year or to current day -->
           <div class="goto-today">
             <div class="goto">
               <input type="text" placeholder="mm/yyyy" class="date-input" />
@@ -51,18 +64,27 @@
           </div>
         </div>
       </div>
+
+      <!-- right: events -->
       <div class="right">
+        <!-- displays selected day's date and events -->
         <div class="today-date">
           <div class="event-day"></div>
           <div class="event-date"></div>
         </div>
+        <!-- container for listing events -->
         <div class="events"></div>
+
+        <!-- box to add events (hidden until user clicks) -->
         <div class="add-event-wrapper">
           <div class="add-event-header">
             <div class="title">Add Event</div>
+            <!-- closes add event box -->
             <i class="fas fa-times close"></i>
           </div>
           <div class="add-event-body">
+
+            <!-- inputs to add event name and times -->
             <div class="add-event-input">
               <input type="text" placeholder="Event Name" class="event-name" />
             </div>
@@ -81,18 +103,21 @@
               />
             </div>
           </div>
+          <!-- button to add event -->
           <div class="add-event-footer">
             <button class="add-event-btn">Add Event</button>
           </div>
         </div>
       </div>
+
+      <!-- button to open add event box -->
       <button class="add-event">
         <i class="fas fa-plus"></i>
       </button>
     </div>
 
 
-
+    <!-- links to external javascript file -->
     <script src="calendar-script.js"></script>
   </body>
 </html>

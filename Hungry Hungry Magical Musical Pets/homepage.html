@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <!-- link to external css file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body id = "homepage">
+    <!-- logo image -->
     <img src="./Images/MMP.png" alt="Logo" id="logo">
+    <!-- nav bar -->
     <nav id = "homepage-nav">
         <a href="homepage.html">Home</a>
         <a href="calendar.html">Calendar</a>
         <a href="pet-customization.html">Pet Customization</a>
     </nav>
+
     <main>
+        <!-- popup box for welcome message -->
         <div id="popup-modal" class="modal">
             <div class="modal-content">
+                <!-- message contents -->
                 <span class="close-btn" onclick="closePopup()">&times;</span>
                 <h2>Welcome to Magical Musical Pets!</h2>
                 <p>Are you ready to begin your adventure?</p>
@@ -24,6 +30,8 @@
                 <button id="popup-button" onclick="window.location.href='calendar.html'">Calendar</button>
             </div>
         </div>
+
+        <!-- floating container for current tasks -->
         <div id="floating-container">
             <div id="img-task-container">
                 <img src="./Images/RightFloatBg.png" alt="" id="container-image">
@@ -31,15 +39,17 @@
             </div>
             <button id="container-button">Get Started!</button>
         </div>
+        <!-- gif wrapper for title animation -->
         <div id="gif-wrapper">
-            <!-- <div id="floating-container-left"></div> -->
             <img src="./Images/Magical Musical pets.gif" id="title" alt="Magical Musical Pets GIF">
         </div>
 
+        <!-- credits image -->
         <img src="./Images/credits.png" alt="" id="credits">
         
     </main>
 
+    <!-- link to external javascript file -->
     <script src="homepage-script"></script>
 </body>
 </html>
