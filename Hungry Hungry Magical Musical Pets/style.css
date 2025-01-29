@@ -508,8 +508,8 @@ nav a:hover {
     border: 1px solid var(--primary-clr);
   }
   .add-event-footer .add-event-btn:hover {
-    background-color: transparent;
-    color: var(--primary-clr);
+    background-color: #f0d1c6;
+  
   }
   
   /* media queries */
@@ -842,6 +842,7 @@ nav a:hover {
   max-width: 800px;
   position: relative;
   margin: auto;
+  top: 50px;
   right: 40%;
 }
 
