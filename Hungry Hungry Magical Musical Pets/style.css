@@ -62,7 +62,7 @@ nav a:hover {
   .container {
     position: relative;
     width: 1200px;
-    min-height: 810px;
+    min-height: 850px;
     margin: 0 auto;
     padding: 5px;
     color: #fff;
@@ -781,18 +781,7 @@ nav a:hover {
 }
 
 
-/* Background Block Behind GIF */
-/* #floating-container-left {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;  
-    height: 100%;  
-    background-color: #F7E9de;  
-    border-radius: 10px;
-    box-shadow: 0 6px 10px #eeb09b;
-    z-index: 1;  
-} */
+
 
 /* GIF Positioned on Top */
 #title {
@@ -818,9 +807,8 @@ nav a:hover {
     height: 200px; 
     width: auto;
     position: absolute; 
-    top: 0px;
-    left: -6px;
-    cursor: pointer;  
+    top: -10px;
+    left: -10px; 
 }
 
 
@@ -828,7 +816,22 @@ nav a:hover {
     padding-left: 80px;  
 }
 
-/* Pet Cuztomization page */
+#credits {
+  
+  height: auto;
+  width: 340px;
+  position: absolute;
+  bottom: 5px;
+  left: 270px;
+  animation: fadeIn 1.2s;
+}
+
+
+
+
+
+
+/* Pet Cuztomization pag styling */
 * {box-sizing:border-box}
 
 /* Slideshow container */
@@ -842,7 +845,7 @@ nav a:hover {
   max-width: 800px;
   position: relative;
   margin: auto;
-  top: 50px;
+  top: 17px;
   right: 40%;
 }
 
@@ -873,7 +876,7 @@ nav a:hover {
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* On hover, add a background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: #eeb09b;;
 }
@@ -897,7 +900,7 @@ nav a:hover {
 /* Fading animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
 }
 
 @keyframes fade {
